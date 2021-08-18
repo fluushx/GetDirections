@@ -1,0 +1,6 @@
+framework module Pods_GetDirections {
+  umbrella header "Pods-GetDirections-umbrella.h"
+
+  export *
+  module * { export * }
+}

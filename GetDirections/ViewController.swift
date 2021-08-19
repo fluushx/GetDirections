@@ -1,3 +1,10 @@
+//
+//  ViewController.swift
+//  GetDirectionsDemo
+//
+//  Created by Alex Nagy on 12/02/2020.
+//  Copyright © 2020 Alex Nagy. All rights reserved.
+//
 
 import UIKit
 import MapKit
@@ -259,8 +266,10 @@ class ViewController: UIViewController {
             locationManager.startMonitoring(for: region)
         }
         stepsCounter += 1
-        let initialMessage = "In \(steps[stepsCounter].distance) meters instruction1, then in \(steps[stepsCounter].instructions) meters, then in \(steps[stepsCounter + 1].distance) meters,  \(steps[stepsCounter + 1].instructions)"
+        let initialMessage = "In \(steps[stepsCounter].distance) meters, then in \(steps[stepsCounter].instructions) meters, then in \(steps[stepsCounter + 1].distance) meters,  \(steps[stepsCounter + 1].instructions)"
         directionLabel.text = initialMessage
+        directionLabel.font = .boldSystemFont(ofSize: 12)
+        directionLabel.textAlignment = .left
         print(initialMessage)
         let speechUtterance = AVSpeechUtterance(string: initialMessage)
         speechSynthesizer.speak(speechUtterance)
